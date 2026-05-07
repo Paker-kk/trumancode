@@ -21,14 +21,26 @@
     },
     {
       "id": 4,
-      "prompt": "帮我选 2026 年最适合做 AI agent 后台的开源框架和组件库，要能商业化。",
-      "expected_output": "Assistant should recognize freshness matters, browse or ask to browse depending on tool availability, perform multi-pass research across official docs, real repositories, licensing, maintenance signals, and ecosystem comparisons, then distinguish facts from judgment before recommending.",
+      "prompt": "帮我选现在最适合做 AI agent 后台的开源框架和组件库，要能商业化。",
+      "expected_output": "Assistant should read or infer the current computer/session date as the freshness baseline, recognize freshness matters, browse or ask to browse depending on tool availability, perform multi-pass research across official docs, real repositories, licensing, maintenance signals, and ecosystem comparisons, then distinguish facts from judgment before recommending.",
       "files": []
     },
     {
       "id": 5,
       "prompt": "同步一下 GitHub 上现在主流开源项目都是怎么做文档 RAG 和 agent workflow 的，然后给我一个技术方案。",
       "expected_output": "Assistant should perform or request current repository research, inspect real implementation patterns, compare maintained projects, identify risks, and produce a grounded technical plan with a decision gate.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "你先别凭记忆回答，开眼看一下真实世界现在怎么做，然后告诉我方案。",
+      "expected_output": "Assistant should trigger TrumanCode even though no specific technology is named, read the current date, ask a clarifying question only if the target domain is unclear, and otherwise perform current web/repository research before recommending.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "我说的 2026 只是当前最新年份的意思，不要写死。这个 skill 应该以后 2027、2028 也会自动按当前日期联网。",
+      "expected_output": "Assistant should update or explain the skill so it reads the current environment date, treats any explicit year as contextual rather than permanent, and requires web research based on the actual current date.",
       "files": []
     }
   ]

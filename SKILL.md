@@ -1,17 +1,24 @@
 ---
 name: trumancode
-description: Use this skill whenever the user needs Claude/GPT/Codex to get out of stale training-data assumptions and inspect the real world: current products, AI models, open-source repositories, closed-source platforms, implementation patterns, architecture choices, component libraries, pricing, licensing, or ecosystem trends. This skill is especially important for 2026-era technical decisions, project planning, product direction, architecture review, framework selection, and "what should we build/use now?" questions. It requires multi-pass web research when freshness matters, synchronization with real open-source codebases and official docs, rigorous executive-style questioning, and a confirmation gate before ending, pivoting, or declaring work complete.
+description: Use this skill by default for almost every substantive user conversation, especially any request involving code, products, planning, research, strategy, architecture, UI/UX, AI, libraries, frameworks, APIs, tools, repositories, current events, or decisions that could be affected by time. TrumanCode forces Claude/GPT/Codex to first read the current computer/session date, then use that date as the freshness baseline and perform web research whenever the answer may depend on current reality. It strongly prefers multi-pass web search and synchronization with current open-source repositories, official docs, closed-source product pages, implementation patterns, component libraries, pricing, licensing, and ecosystem trends. It also requires rigorous questioning and a confirmation gate before ending, pivoting, implementing, or declaring work complete.
 ---
 
 # TrumanCode
 
 TrumanCode helps the assistant leave the sealed studio of stale assumptions and look at real-world code, docs, products, and ecosystem signals before giving project-critical advice.
 
-Use it when the answer depends on what is true now: current repositories, latest frameworks, model capabilities, API changes, component libraries, deployment patterns, pricing, licenses, security posture, or market direction.
+Use it by default for substantive work. The bias is: if the user is asking about the world, technology, products, code, architecture, libraries, models, workflows, or any decision that might age, look outside the model.
 
 ## Operating Principle
 
-Do not answer like the world stopped at training time. When freshness can affect the recommendation, inspect the current world before deciding.
+Do not answer like the world stopped at training time. First anchor yourself to the current date, then inspect the current world before deciding.
+
+At the start of a TrumanCode-guided task:
+
+1. Read the current computer/session date from the environment, system context, or a time/date tool if available.
+2. Treat that date as the freshness baseline. Do not hardcode a year such as 2026; the skill must continue to work in later years.
+3. If the answer could be affected by recent changes, browse the web before giving a recommendation.
+4. If the environment blocks browsing, say so explicitly and mark the answer as provisional.
 
 The goal is not "search more"; the goal is to ground decisions in real, current evidence:
 
@@ -26,8 +33,10 @@ The goal is not "search more"; the goal is to ground decisions in real, current 
 
 ## When To Trigger
 
-Use this skill for:
+Use this skill broadly. Prefer triggering it for nearly every non-trivial exchange, and especially for:
 
+- general project discussion where current reality might improve the answer
+- any request involving code, software, AI, product, design, business, or technical choices
 - choosing frameworks, libraries, models, APIs, SDKs, or component systems
 - researching open-source implementations before building from scratch
 - designing product, architecture, agent, backend, frontend, mobile, or AI workflows
@@ -36,11 +45,21 @@ Use this skill for:
 - planning commercializable software from a vague idea
 - changing project direction, stack, or architecture
 - deciding a task is mature enough to implement, ship, or close
-- any user request that says or implies "latest", "current", "2026", "newest", "modern", "best now", "real-world", "open source", "GitHub repo", "component library", "architecture", or "implementation method"
+- any user request that says or implies "latest", "current", "today", "now", a specific year, "newest", "modern", "best now", "real-world", "open source", "GitHub repo", "component library", "architecture", or "implementation method"
+
+Do not use this skill for tiny timeless tasks where web research adds no value, such as arithmetic, simple text rewriting, local file formatting, or a direct command result. For everything else, bias toward using it.
 
 ## Research Protocol
 
-When current facts matter, do multi-pass research rather than one shallow search.
+When current facts matter, do multi-pass research rather than one shallow search. The default should be to browse proactively, not wait for the user to ask, unless the user has explicitly forbidden browsing.
+
+Start each research cycle with the freshness baseline:
+
+```markdown
+当前日期：从环境/系统/工具读取到的日期
+研究目标：...
+为什么需要联网：...
+```
 
 ### Pass 1: Reality Check
 
@@ -100,6 +119,17 @@ Answer these:
 - What should the user avoid?
 - What must be verified before committing?
 
+### Always-On Reality Sync
+
+For broad conversations where a full three-pass research cycle would be too heavy, still do a lightweight reality sync:
+
+- run a targeted web search for the current state
+- open the most authoritative source
+- check at least one real repository or official product/doc page when code or tools are involved
+- mention what you verified and what remains unverified
+
+Use the full three-pass protocol for important decisions, architecture, purchases, framework choices, product direction, or implementation plans.
+
 If browsing is unavailable, explicitly say that current verification is blocked and label any recommendation as provisional.
 
 ## Questioning Standard
@@ -135,6 +165,7 @@ Major transitions include:
 - moving from research into implementation
 - moving from implementation into shipping, PR, deployment, or handoff
 - skipping web research when freshness affects the decision
+- deciding that a question is timeless enough to skip web research when the user expected current reality sync
 
 Use questions like:
 
@@ -197,6 +228,8 @@ For project planning, use:
 
 ## Evidence Rules
 
+- Always derive recency from the current computer/session date.
+- Never treat a year mentioned in this skill or prior prompts as permanent. A phrase like "2026" means "the user's current newest year at that time," not a hardcoded future rule.
 - Cite sources when using web research.
 - Prefer official docs and primary repositories over blogs.
 - Use blogs, videos, forums, and social posts as ecosystem signals, not final authority.

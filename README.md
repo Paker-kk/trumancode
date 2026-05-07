@@ -2,23 +2,24 @@
 
 **TrumanCode** is a Codex/Claude skill for forcing AI work out of stale training-data assumptions and into the real world.
 
-It emphasizes multi-pass web research, current open-source repository inspection, official documentation checks, and rigorous project questioning before technical decisions are made.
+It emphasizes always-on reality sync: read the current computer/session date, perform web research when freshness matters, inspect current open-source repositories, check official documentation, and ask rigorous project questions before technical decisions are made.
 
 ## Why This Exists
 
 Modern AI assistants can sound confident while relying on old knowledge. TrumanCode gives the assistant a repeatable habit:
 
-1. Look outside the model.
-2. Check current docs and real repositories.
-3. Compare what maintained projects actually do.
-4. Challenge weak product and architecture assumptions.
-5. Ask for confirmation before pivoting, implementing, shipping, or closing.
+1. Read the current date instead of hardcoding a year.
+2. Look outside the model by default.
+3. Check current docs and real repositories.
+4. Compare what maintained projects actually do.
+5. Challenge weak product and architecture assumptions.
+6. Ask for confirmation before pivoting, implementing, shipping, or closing.
 
 The name comes from the "Truman" idea: leave the artificial studio and see the real world.
 
 ## What It Is Good For
 
-- 2026-era framework, model, SDK, and component-library selection
+- current-year framework, model, SDK, and component-library selection
 - open-source implementation research
 - product and architecture planning
 - AI agent/backend/frontend stack decisions
@@ -46,7 +47,7 @@ trumancode/SKILL.md
 Prompts that should trigger this skill:
 
 ```text
-帮我选 2026 年最适合做 AI agent 后台的开源框架和组件库，要能商业化。
+帮我选现在最适合做 AI agent 后台的开源框架和组件库，要能商业化。
 ```
 
 ```text
@@ -61,11 +62,21 @@ Prompts that should trigger this skill:
 帮我同步一下现在 GitHub 上主流开源项目都是怎么实现这个功能的。
 ```
 
+```text
+你先别凭记忆回答，开眼看一下真实世界现在怎么做。
+```
+
+```text
+这个方案今天还成立吗？帮我查最新代码库和官方文档。
+```
+
 ## Skill Behavior
 
 When triggered, TrumanCode asks the assistant to:
 
 - run multi-pass current research when freshness matters
+- read the current computer/session date as the freshness baseline
+- trigger broadly for substantive conversations, not only explicit "latest" requests
 - inspect official docs and real open-source repositories
 - compare ecosystem signals instead of trusting one source
 - challenge product, interaction, algorithm, and architecture assumptions
@@ -90,7 +101,8 @@ The `evals/evals.json` file contains starter test prompts for checking whether t
 - pauses before vague implementation
 - asks for confirmation before completion
 - treats stack changes as a direction-change gate
-- requires current research for 2026 technical choices
+- requires current research for current-year technical choices
+- verifies that the assistant does not hardcode 2026 as a permanent rule
 
 ## License
 
