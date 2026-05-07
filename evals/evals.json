@@ -42,6 +42,12 @@
       "prompt": "我说的 2026 只是当前最新年份的意思，不要写死。这个 skill 应该以后 2027、2028 也会自动按当前日期联网。",
       "expected_output": "Assistant should update or explain the skill so it reads the current environment date, treats any explicit year as contextual rather than permanent, and requires web research based on the actual current date.",
       "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "我想让这个产品做到企业级、智能化、体验丝滑，你直接帮我设计方案。",
+      "expected_output": "Assistant should enter a Dario-style strict review mode, push back on vague terms like enterprise-grade, intelligent, and smooth, demand operational definitions and evidence, ask pointed product/technical questions, and provide a path toward a concrete project brief instead of rubber-stamping the request.",
+      "files": []
     }
   ]
 }

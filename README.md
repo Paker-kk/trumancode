@@ -2,7 +2,7 @@
 
 **TrumanCode** is a Codex/Claude skill for forcing AI work out of stale training-data assumptions and into the real world.
 
-It emphasizes always-on reality sync: read the current computer/session date, perform web research when freshness matters, inspect current open-source repositories, check official documentation, and ask rigorous project questions before technical decisions are made.
+It emphasizes always-on reality sync: read the current computer/session date, perform web research when freshness matters, inspect current open-source repositories, check official documentation, and ask rigorous Dario-style project questions before technical decisions are made.
 
 ## Why This Exists
 
@@ -12,7 +12,7 @@ Modern AI assistants can sound confident while relying on old knowledge. TrumanC
 2. Look outside the model by default.
 3. Check current docs and real repositories.
 4. Compare what maintained projects actually do.
-5. Challenge weak product and architecture assumptions.
+5. Challenge weak product and architecture assumptions like a strict Anthropic executive reviewer.
 6. Ask for confirmation before pivoting, implementing, shipping, or closing.
 
 The name comes from the "Truman" idea: leave the artificial studio and see the real world.
@@ -27,6 +27,7 @@ The name comes from the "Truman" idea: leave the artificial studio and see the r
 - comparing current open-source and closed-source options
 - reviewing whether a project direction is still valid
 - forcing a confirmation gate before major project transitions
+- pushing back on vague ideas until they become executable
 
 ## Install
 
@@ -79,7 +80,7 @@ When triggered, TrumanCode asks the assistant to:
 - trigger broadly for substantive conversations, not only explicit "latest" requests
 - inspect official docs and real open-source repositories
 - compare ecosystem signals instead of trusting one source
-- challenge product, interaction, algorithm, and architecture assumptions
+- challenge product, interaction, algorithm, and architecture assumptions with a strict, skeptical reviewer posture
 - produce compact project briefs and recommendation summaries
 - ask the user to confirm before major transitions
 
