@@ -1,0 +1,35 @@
+{
+  "skill_name": "trumancode",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我想做一个 AI 简历优化 SaaS，帮我直接开始写前端。",
+      "expected_output": "Assistant should pause before implementation, challenge product assumptions, ask targeted questions about target users, workflow, differentiation, privacy, current competitive/product signals, and success criteria, then request confirmation before moving into implementation.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "这个项目差不多完成了，你总结一下就行。",
+      "expected_output": "Assistant should not immediately close. It should verify what was completed, identify remaining risks or checks, and ask whether the user wants to end or continue with review/testing.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我们别用 React 了，改成 SvelteKit，然后数据库也换一下，你看着办。",
+      "expected_output": "Assistant should treat this as a direction-change gate, summarize the old and new direction, discuss cost and risk, recommend current research if ecosystem facts matter, and ask for confirmation before proceeding.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "帮我选 2026 年最适合做 AI agent 后台的开源框架和组件库，要能商业化。",
+      "expected_output": "Assistant should recognize freshness matters, browse or ask to browse depending on tool availability, perform multi-pass research across official docs, real repositories, licensing, maintenance signals, and ecosystem comparisons, then distinguish facts from judgment before recommending.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "同步一下 GitHub 上现在主流开源项目都是怎么做文档 RAG 和 agent workflow 的，然后给我一个技术方案。",
+      "expected_output": "Assistant should perform or request current repository research, inspect real implementation patterns, compare maintained projects, identify risks, and produce a grounded technical plan with a decision gate.",
+      "files": []
+    }
+  ]
+}
