@@ -34,13 +34,13 @@ The name comes from the "Truman" idea: leave the artificial studio and see the r
 Copy this folder into your Codex/Claude skills directory:
 
 ```powershell
-Copy-Item -Recurse -Force .\trumancode C:\Users\ava\.agents\skills\trumancode
+Copy-Item -Recurse -Force .\truman C:\Users\ava\.agents\skills\truman
 ```
 
 The required file is:
 
 ```text
-trumancode/SKILL.md
+truman/SKILL.md
 ```
 
 ## Usage Examples
@@ -87,7 +87,7 @@ When triggered, TrumanCode asks the assistant to:
 ## Repository Layout
 
 ```text
-trumancode/
+truman/
 ├── SKILL.md
 ├── README.md
 ├── LICENSE
